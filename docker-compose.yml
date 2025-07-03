@@ -32,7 +32,7 @@ services:
       - odoo-network
     # command: ["odoo", "-d", "odoo", "-i", "base", "--stop-after-init"]  # only for first-time setup
     command: ["--", "-i", "base"]
-    #command: ["odoo", "-d", "odoo", "-u", "money_management", "--without-demo-all"]
+    # command: ["odoo", "-d", "odoo", "-u", "money_management", "--without-demo-all"]
 
 volumes:
   odoo-db-data:

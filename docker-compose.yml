@@ -10,7 +10,7 @@ services:
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "5440:5432"
     networks:
       - odoo-network
 
@@ -26,8 +26,8 @@ services:
       - ./config/odoo.conf:/etc/odoo/odoo.conf
     networks:
       - odoo-network
-    command: ["odoo", "-d", "odoo", "-i", "base", "--stop-after-init"]  # only for first-time setup
-    # command: ["--", "-i", "base"]
+    # command: ["odoo", "-d", "odoo", "-i", "base", "--stop-after-init"]  # only for first-time setup
+    command: ["--", "-i", "base"]
     # command: ["odoo", "-d", "odoo", "-u", "money_management", "--without-demo-all"]
 
 volumes:

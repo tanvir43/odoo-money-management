@@ -22,6 +22,14 @@
     <field name="view_mode">tree,form</field>
 </record>
 
+<!--Server Action-->
+<record id="action_get_balance" model="ir.actions.server">
+    <field name="name">Show Balance</field>
+    <field name="model_id" ref="model_money_entry"/> <!--referencing the table-->
+    <field name="state">code</field>
+    <field name="code">action = model.get_balance2()</field> <!--Invoking the action method-->
+</record>
+
 <!--Menu-->
 <menuitem
     id="menu_money_app_root"
@@ -32,6 +40,14 @@
     id="menu_money_entry"
     parent="menu_money_app_root"
     action="action_money_entry"
+    />
+
+<menuitem
+    id="menu_show_balance"
+    name="Show Balance Popup"
+    parent="menu_money_app_root"
+    action="action_get_balance"
+    sequence = "20"
     />
 
 

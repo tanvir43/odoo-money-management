@@ -16,7 +16,7 @@ class MoneyEntry(models.Model):
         string="Type",
         required=True
     )
-    balance = fields.Float(compute='_compute_balance', string="Balance", readonly=True)
+    balance = fields.Float(compute='_compute_balance', string="Balance", readonly=True) # Computational field
 
     @api.depends('type', 'amount')
     def _compute_balance(self):
@@ -26,7 +26,7 @@ class MoneyEntry(models.Model):
             record.balance = income - expenses
 
 
-    # Server Action
+    # Server Action to Show Total Balance in a Popup
     def get_balance2(self):
         income = sum(self.search([('type', '=', 'income')]).mapped('amount'))
         expenses = sum(self.search([('type', '=', 'expense')]).mapped('amount'))

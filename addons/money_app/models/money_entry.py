@@ -24,3 +24,20 @@ class MoneyEntry(models.Model):
             income = sum(self.search([('type', '=', 'income')]).mapped('amount'))
             expenses = sum(self.search([('type', '=', 'expense')]).mapped('amount'))
             record.balance = income - expenses
+
+
+    # Server Action
+    def get_balance2(self):
+        income = sum(self.search([('type', '=', 'income')]).mapped('amount'))
+        expenses = sum(self.search([('type', '=', 'expense')]).mapped('amount'))
+        balance = income - expenses
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'current_balance',
+                'message': f'Current Balance is {balance}',
+                'sticky': False
+            }
+        }

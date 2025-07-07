@@ -4,6 +4,15 @@
     <template id="balance_template">
         <t t-call="website.layout">
             <div class="container mt-5">
+              <h1 class="text-center">Your Current Balance </h1>
+              <div class="row">
+               <div class="col-md-6 offset-md-3">
+                <p class="lead text-center">
+                The Current balance is: <strong t-esc="balance"></strong>
+                </p>
+               </div>
+              </div>
+             <h2 class="mt-4">Entries</h2>
              <table class="table table-striped">
                <thead>
                 <tr>

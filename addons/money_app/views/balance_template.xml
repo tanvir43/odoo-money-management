@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="balance_template">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+             <table class="table table-striped">
+               <thead>
+                <tr>
+                 <th>Description</th>
+                 <th>Date</th>
+                 <th>Amount</th>
+                 <th>Type</th>
+                </tr>
+               </thead> 
+               <body>
+                <t t-foreach="entries" t-as="entry">
+                 <tr>
+                  <td t-esc="entry.name"/>
+                  <td t-esc="entry.date"/>
+                  <td>
+                   <span t-att-class="'text-success' if entry.type == 'income' else 'text-danger'">
+                    <t t-esc="entry.amount"/>
+                   </span>
+                  </td>
+                  <td t-esc="entry.type == 'income' and 'Income or 'Expense'"/>
+                 </tr>
+                </t>
+             </table> 
+            </div>
+        </t>
+    </template>
+</odoo>

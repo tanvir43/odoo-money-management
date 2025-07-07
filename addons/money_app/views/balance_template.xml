@@ -23,9 +23,10 @@
                     <t t-esc="entry.amount"/>
                    </span>
                   </td>
-                  <td t-esc="entry.type == 'income' and 'Income or 'Expense'"/>
+                  <td t-esc="entry.type == 'income' and 'Income' or 'Expense'"/>
                  </tr>
                 </t>
+               </body>
              </table> 
             </div>
         </t>

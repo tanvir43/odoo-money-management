@@ -30,6 +30,14 @@
     <field name="code">action = model.get_balance2()</field> <!--Invoking the action method-->
 </record>
 
+<!--Action to Open Website Balance URL-->
+<record id="action_open_website_balance" model="ir.actions.act_url">
+    <field name="name">Show Balance</field>
+    <field name="type">ir.actions.act_url</field>
+    <field name="url">/money/balance</field>
+    <field name="target">new</field> <!--to open in new tabl-->
+</record>
+
 <!--Menu-->
 <menuitem
     id="menu_money_app_root"
@@ -49,6 +57,12 @@
     action="action_get_balance"
     sequence = "20"
     />
-
+<menuitem
+    id="menu_show_balance_web"
+    name="Show Balance On Website"
+    parent="menu_money_app_root"
+    action="action_open_website_balance"
+    sequence = "30"
+    />
 
 </odoo>

@@ -12,7 +12,8 @@
     'depends': ['base', 'web', 'website'],
     'data': [
         'security/ir.model.access.csv',
-        'views/money_entry_views.xml'
+        'views/money_entry_views.xml',
+        'views/balance_template.xml',
     ],
     'installation': True,
     'application': True,

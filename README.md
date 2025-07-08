@@ -3,9 +3,10 @@
 This project is a custom **Money Management App** built on top of **Odoo**, containerized using **Docker Compose** for easy setup and deployment. It helps you track income, expenses, and view current balances from a simple interface.
 
 ## New features added so far
--- A popup message to show current balance (See `Show Balance Popup`)
--- A website navigation to show income/expense and the balance in a web/clinet view (See `Show Balance On Website`)
--- A Kanban view added
+-- Popup message to show current balance (See `Show Balance Popup`)
+-- Website navigation to show income/expense and the balance in a web/clinet view (See `Show Balance On Website`)
+-- Kanban view
+-- Graph view
 
 ---
 
